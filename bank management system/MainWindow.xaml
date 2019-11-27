@@ -8,6 +8,6 @@
         Title="银行业务管理系统" Height="450" Width="800">
     <Grid>
         <Label Content="银行业务管理系统" HorizontalAlignment="Left" Margin="295,31,0,0" VerticalAlignment="Top" Width="181" FontSize="20" Height="37"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="186,157,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="按钮" HorizontalAlignment="Left" Margin="186,157,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>

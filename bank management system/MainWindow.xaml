@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bank_management_system"
         mc:Ignorable="d"
-        Title="银行业务管理系统" Height="455" Width="800">
+        Title="银行业务管理系统" Height="450" Width="800">
     <Grid>
         <Label Content="银行业务管理系统" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="0,20,0,0"/>
         <Button Content="按钮" HorizontalAlignment="Left" Margin="95,83,0,0" VerticalAlignment="Top" Width="75"/>

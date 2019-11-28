@@ -31,7 +31,7 @@
                 </StackPanel.Resources>
                 <Expander Header="存款取款" ExpandDirection="Down" IsExpanded="True">
                     <StackPanel>
-                        <Button x:Name="BtnOpenAccount" Height="50" Width="60" Tag="money/NewAccount.xaml" Click="Button_Click">
+                        <Button x:Name="BtnOpenAccount" Height="50" Width="60" Tag="money/NewAccount.xaml" Click="BtnOpenAccount_Click">
                             <StackPanel Orientation="Vertical">
                                 <Image Source="images/btn1.png" Width="30"/>
                                 <TextBlock Text="开户" VerticalAlignment="Center"/>

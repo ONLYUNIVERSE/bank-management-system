@@ -31,19 +31,19 @@
                 </StackPanel.Resources>
                 <Expander Header="存款取款" ExpandDirection="Down" IsExpanded="True">
                     <StackPanel>
-                        <Button Height="50" Width="60" Tag="money/NewAccount.xaml" Click="Button_Click">
+                        <Button x:Name="BtnOpenAccount" Height="50" Width="60" Tag="money/NewAccount.xaml" Click="Button_Click">
                             <StackPanel Orientation="Vertical">
                                 <Image Source="images/btn1.png" Width="30"/>
                                 <TextBlock Text="开户" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
-                        <Button Height="50" Width="60" Tag="money/NewAccount.xaml" Click="Button_Click">
+                        <Button x:Name="BtnDepoist" Height="50" Width="60" Tag="money/NewAccount.xaml" Click="Button_Click">
                             <StackPanel Orientation="Vertical">
                                 <Image Source="images/btn1.png" Width="30"/>
                                 <TextBlock Text="存款" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
-                        <Button Height="50" Width="60" Tag="money/NewAccount.xaml" Click="Button_Click">
+                        <Button x:Name="BtnATM" Height="50" Width="60" Tag="money/NewAccount.xaml" Click="Button_Click">
                             <StackPanel Orientation="Vertical">
                                 <Image Source="images/btn1.png" Width="30"/>
                                 <TextBlock Text="取款" VerticalAlignment="Center"/>
@@ -53,13 +53,13 @@
                 </Expander>
                 <Expander Header="汇总查询">
                     <StackPanel>
-                        <Button Height="50" Width="60" Tag="quary/DayQuery.axml" Click="Button_Click">
+                        <Button x:Name="BtnDayTogether" Height="50" Width="60" Tag="quary/DayQuery.axml" Click="Button_Click">
                             <StackPanel Orientation="Vertical">
                                 <Image Source="images/btn1.png" Width="30"/>
                                 <TextBlock Text="当日汇总" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
-                        <Button Height="50" Width="60" Tag="quary/DayQuery.axml" Click="Button_Click">
+                        <Button x:Name="BtnCheckTogeter" Height="50" Width="60" Tag="quary/DayQuery.axml" Click="Button_Click">
                             <StackPanel Orientation="Vertical">
                                 <Image Source="images/btn1.png" Width="30"/>
                                 <TextBlock Text="汇总查询" VerticalAlignment="Center"/>
@@ -69,13 +69,13 @@
                 </Expander>
                 <Expander Header="职员管理">
                     <StackPanel>
-                        <Button Height="50" Width="60" Tag="quary/DayQuery.axml" Click="Button_Click">
+                        <Button x:Name="BtnManageEmployee" Height="50" Width="60" Tag="quary/DayQuery.axml" Click="Button_Click">
                             <StackPanel Orientation="Vertical">
                                 <Image Source="images/btn1.png" Width="30"/>
                                 <TextBlock Text="职员管理" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
-                        <Button Height="50" Width="60" Tag="quary/DayQuery.axml" Click="Button_Click">
+                        <Button x:Name="BtnIncomeChange" Height="50" Width="60" Tag="quary/DayQuery.axml" Click="Button_Click">
                             <StackPanel Orientation="Vertical">
                                 <Image Source="images/btn1.png" Width="30"/>
                                 <TextBlock Text="调整工资" VerticalAlignment="Center"/>
@@ -85,13 +85,13 @@
                 </Expander>
                 <Expander Header="其他功能">
                     <StackPanel>
-                        <Button Height="50" Width="60" Tag="quary/DayQuery.axml" Click="Button_Click">
+                        <Button x:Name="BtnChangeAccountPasswd" Height="50" Width="60" Tag="quary/DayQuery.axml" Click="Button_Click">
                             <StackPanel Orientation="Vertical">
                                 <Image Source="images/btn1.png" Width="30"/>
                                 <TextBlock Text="更改账户密码" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
-                        <Button Height="50" Width="60" Tag="quary/DayQuery.axml" Click="Button_Click">
+                        <Button x:Name="BtnChangeAdminPasswd" Height="50" Width="60" Tag="quary/DayQuery.axml" Click="Button_Click">
                             <StackPanel Orientation="Vertical">
                                 <Image Source="images/btn1.png" Width="30"/>
                                 <TextBlock Text="更改操作员密码" VerticalAlignment="Center"/>
@@ -101,7 +101,7 @@
                 </Expander>
                 <Expander Header="利率设置">
                     <StackPanel>
-                        <Button Height="50" Width="60" Tag="quary/DayQuery.axml" Click="Button_Click">
+                        <Button x:Name="BtnSetRate" Height="50" Width="60" Tag="quary/DayQuery.axml" Click="Button_Click">
                             <StackPanel Orientation="Vertical">
                                 <Image Source="images/btn1.png" Width="30"/>
                                 <TextBlock Text="利率设置" VerticalAlignment="Center"/>
@@ -112,6 +112,6 @@
                 <Expander Header="系统帮助"></Expander>
             </StackPanel>
         </ScrollViewer>
-        <Frame Name="frame1" Margin="5 20 40 20" BorderThickness="2" BorderBrush="#FFA6C9FD" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="Windows" Margin="5 20 40 20" BorderThickness="2" BorderBrush="#FFA6C9FD" NavigationUIVisibility="Hidden"/>
     </DockPanel>
 </Window>

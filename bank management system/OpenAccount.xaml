@@ -21,6 +21,7 @@
         <TextBox x:Name="BankCardNumberTextBox" HorizontalAlignment="Left" Height="30" Margin="126,232,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
         <TextBox x:Name="PasswdTextBox" HorizontalAlignment="Left" Height="30" Margin="126,272,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
         <TextBox x:Name="PasswdAgainTextBox" HorizontalAlignment="Left" Height="30" Margin="126,312,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
-        <Button x:Name="ConfirmButton" Content="确认开户" HorizontalAlignment="Left" Height="36" Margin="190,357,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="ConfirmButton" Content="确认开户" HorizontalAlignment="Left" Height="36" Margin="126,357,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="CancleOpenAccount" Content="取消开户" HorizontalAlignment="Left" Height="36" Margin="306,357,0,0" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

@@ -147,12 +147,12 @@
     <Content Include="Bank.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Banking business.mdf">
+    <Content Include="BankSql.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Banking business_log.ldf">
+    <Content Include="BankSql_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Banking business.mdf</DependentUpon>
+      <DependentUpon>BankSql.mdf</DependentUpon>
     </Content>
     <Content Include="Bank_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

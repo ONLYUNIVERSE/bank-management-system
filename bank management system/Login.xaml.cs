@@ -24,6 +24,10 @@ namespace bank_management_system
             InitializeComponent();
         }
 
-       
+        private void OpenAccount_Click(object sender, RoutedEventArgs e)
+        {
+            OpenAccount openaccount = new OpenAccount();
+            openaccount.Show();
+        }
     }
 }

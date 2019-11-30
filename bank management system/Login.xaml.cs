@@ -33,8 +33,9 @@ namespace bank_management_system
                     break;
                 case "开户":
                     OpenAccount openAccount = new OpenAccount();
-                    this.close();
-                    openAccount.showDi
+                    this.Close();
+                    openAccount.showDialog();
+                    break;
             }
 
     }

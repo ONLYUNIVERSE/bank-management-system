@@ -5,20 +5,9 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="BankModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--生成过程中发现错误:
-警告 6002: 表/视图“C:\USERS\ZHOU\SOURCE\REPOS\BANK-MANAGEMENT-SYSTEM2\BANK MANAGEMENT SYSTEM\BANK.MDF.dbo.AccountTable”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="AccountTable">
           <Key>
-            <PropertyRef Name="UserName" />
-            <PropertyRef Name="Password" />
-            <PropertyRef Name="Name" />
-            <PropertyRef Name="Sex" />
-            <PropertyRef Name="PhoneNumber" />
             <PropertyRef Name="IDNumber" />
-            <PropertyRef Name="BankCardNumber" />
-            <PropertyRef Name="Operator" />
-            <PropertyRef Name="Money" />
-            <PropertyRef Name="DepositType" />
           </Key>
           <Property Name="UserName" Type="nchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nchar" MaxLength="50" Nullable="false" />
@@ -31,16 +20,9 @@
           <Property Name="Money" Type="float" Nullable="false" />
           <Property Name="DepositType" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6002: 表/视图“C:\USERS\ZHOU\SOURCE\REPOS\BANK-MANAGEMENT-SYSTEM2\BANK MANAGEMENT SYSTEM\BANK.MDF.dbo.AdministratorTable”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="AdministratorTable">
           <Key>
-            <PropertyRef Name="AdiminName" />
-            <PropertyRef Name="AdminPasswd" />
-            <PropertyRef Name="AdminPhoneNumber" />
-            <PropertyRef Name="AdminSex" />
             <PropertyRef Name="AdminID" />
-            <PropertyRef Name="AdminSalary" />
           </Key>
           <Property Name="AdiminName" Type="nchar" MaxLength="50" Nullable="false" />
           <Property Name="AdminPasswd" Type="nchar" MaxLength="50" Nullable="false" />
@@ -49,47 +31,17 @@
           <Property Name="AdminID" Type="char" MaxLength="20" Nullable="false" />
           <Property Name="AdminSalary" Type="float" Nullable="false" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6002: 表/视图“C:\USERS\ZHOU\SOURCE\REPOS\BANK-MANAGEMENT-SYSTEM2\BANK MANAGEMENT SYSTEM\BANK.MDF.dbo.RateTable”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="RateTable">
           <Key>
             <PropertyRef Name="Time" />
-            <PropertyRef Name="Rate" />
           </Key>
           <Property Name="Time" Type="int" Nullable="false" />
           <Property Name="Rate" Type="float" Nullable="false" />
         </EntityType>
         <EntityContainer Name="BankModelStoreContainer">
-          <EntitySet Name="AccountTable" EntityType="Self.AccountTable" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [AccountTable].[UserName] AS [UserName], 
-    [AccountTable].[Password] AS [Password], 
-    [AccountTable].[Name] AS [Name], 
-    [AccountTable].[Sex] AS [Sex], 
-    [AccountTable].[PhoneNumber] AS [PhoneNumber], 
-    [AccountTable].[IDNumber] AS [IDNumber], 
-    [AccountTable].[BankCardNumber] AS [BankCardNumber], 
-    [AccountTable].[Operator] AS [Operator], 
-    [AccountTable].[Money] AS [Money], 
-    [AccountTable].[DepositType] AS [DepositType]
-    FROM [dbo].[AccountTable] AS [AccountTable]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="AdministratorTable" EntityType="Self.AdministratorTable" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [AdministratorTable].[AdiminName] AS [AdiminName], 
-    [AdministratorTable].[AdminPasswd] AS [AdminPasswd], 
-    [AdministratorTable].[AdminPhoneNumber] AS [AdminPhoneNumber], 
-    [AdministratorTable].[AdminSex] AS [AdminSex], 
-    [AdministratorTable].[AdminID] AS [AdminID], 
-    [AdministratorTable].[AdminSalary] AS [AdminSalary]
-    FROM [dbo].[AdministratorTable] AS [AdministratorTable]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="RateTable" EntityType="Self.RateTable" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [RateTable].[Time] AS [Time], 
-    [RateTable].[Rate] AS [Rate]
-    FROM [dbo].[RateTable] AS [RateTable]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="AccountTable" EntityType="Self.AccountTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdministratorTable" EntityType="Self.AdministratorTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RateTable" EntityType="Self.RateTable" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -98,16 +50,7 @@
       <Schema Namespace="BankModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="AccountTable">
           <Key>
-            <PropertyRef Name="UserName" />
-            <PropertyRef Name="Password" />
-            <PropertyRef Name="Name" />
-            <PropertyRef Name="Sex" />
-            <PropertyRef Name="PhoneNumber" />
             <PropertyRef Name="IDNumber" />
-            <PropertyRef Name="BankCardNumber" />
-            <PropertyRef Name="Operator" />
-            <PropertyRef Name="Money" />
-            <PropertyRef Name="DepositType" />
           </Key>
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
@@ -122,12 +65,7 @@
         </EntityType>
         <EntityType Name="AdministratorTable">
           <Key>
-            <PropertyRef Name="AdiminName" />
-            <PropertyRef Name="AdminPasswd" />
-            <PropertyRef Name="AdminPhoneNumber" />
-            <PropertyRef Name="AdminSex" />
             <PropertyRef Name="AdminID" />
-            <PropertyRef Name="AdminSalary" />
           </Key>
           <Property Name="AdiminName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="AdminPasswd" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
@@ -139,7 +77,6 @@
         <EntityType Name="RateTable">
           <Key>
             <PropertyRef Name="Time" />
-            <PropertyRef Name="Rate" />
           </Key>
           <Property Name="Time" Type="Int32" Nullable="false" />
           <Property Name="Rate" Type="Double" Nullable="false" />

@@ -20,7 +20,7 @@ namespace bank_management_system
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()//1.0.1  
+        public MainWindow()
         {
             InitializeComponent();
         }

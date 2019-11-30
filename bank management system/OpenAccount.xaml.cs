@@ -21,65 +21,70 @@ namespace bank_management_system
     {
         
         public OpenAccount()
-        {
-            
+        {   
             InitializeComponent();
-            
+            this.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;   
         }
 
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
-            if (SexTextBox.Text.ToString() == "男" || SexTextBox.Text.ToString() == "女")
+            bool failure = true;   //开户成功与否
+            while(failure)
             {
-                if (IDNumberTextBox.Text.ToString().Length == 18)
+                if (SexTextBox.Text.ToString() == "男" || SexTextBox.Text.ToString() == "女")
                 {
-                    if (BankCardNumberTextBox.Text.ToString().Length > 15 && BankCardNumberTextBox.Text.ToString().Length < 20)
+                    if (IDNumberTextBox.Text.ToString().Length == 18)
                     {
-                        if (PasswdTextBox.Text == PasswdAgainTextBox.Text)
+                        if (BankCardNumberTextBox.Text.ToString().Length > 15 && BankCardNumberTextBox.Text.ToString().Length < 20)
                         {
-                            using (var context = new BankEntities())
+                            if (PasswdTextBox.Text == PasswdAgainTextBox.Text)
                             {
-                                AccountTable accountTable = new AccountTable()
+                                using (var context = new BankEntities())
                                 {
-                                    Name = NameTextBox.Text.ToString(),
-                                    Sex = SexTextBox.Text.ToString(),
-                                    IDNumber = IDNumberTextBox.Text.ToString(),
-                                    PhoneNumber = PhoneNumberTextBox.Text.ToString(),
-                                    BankCardNumber = BankCardNumberTextBox.Text.ToString(),
-                                    Password = PasswdTextBox.Text.ToString()
-                                };
-
+                                    AccountTable accountTable = new AccountTable()
+                                    {
+                                        Name = NameTextBox.Text.ToString(),
+                                        Sex = SexTextBox.Text.ToString(),
+                                        IDNumber = IDNumberTextBox.Text.ToString(),
+                                        PhoneNumber = PhoneNumberTextBox.Text.ToString(),
+                                        BankCardNumber = BankCardNumberTextBox.Text.ToString(),
+                                        Password = PasswdTextBox.Text.ToString()
+                                    };
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("两次输入的密码不一致！");
+                                PasswdTextBox.Text = "";
+                                PasswdAgainTextBox.Text = "";
+                                PasswdTextBox.Focus();
                             }
                         }
                         else
                         {
-                            MessageBox.Show("两次输入的密码不一致！");
-                            PasswdTextBox.Text = "";
-                            PasswdAgainTextBox.Text = "";
-                            PasswdTextBox.Focus();
+                            MessageBox.Show("无效的银行卡号！");
+                            BankCardNumberTextBox.Text = "";
+                            BankCardNumberTextBox.Focus();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("无效的银行卡号！");
-                        BankCardNumberTextBox.Text = "";
-                        BankCardNumberTextBox.Focus();
+                        MessageBox.Show("无效的身份证号！");
+                        IDNumberTextBox.Text = "";
+                        IDNumberTextBox.Focus();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("无效的身份证号！");
-                    IDNumberTextBox.Text = "";
-                    IDNumberTextBox.Focus();
+                    MessageBox.Show("请输入“男”或“女”");
+                    SexTextBox.Text = "";
+                    SexTextBox.Focus();
                 }
+                failure = false;
             }
-            else
-            {
-                MessageBox.Show("请输入“男”或“女”");
-                SexTextBox.Text = "";
-                SexTextBox.Focus();
-            }
-            
+            Login login = new Login();
+            this.Close();
+            login.ShowDialog();
         }
 
         private void CancleOpenAccount_Click(object sender, RoutedEventArgs e)

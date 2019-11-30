@@ -24,19 +24,20 @@ namespace bank_management_system
             InitializeComponent();
         }
 
-        private void OpenAccount_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
-            switch (btn.Content.Tostring())
+            switch (btn.Content.ToString())
             {
                 case "登录":
                     break;
                 case "开户":
                     OpenAccount openAccount = new OpenAccount();
                     this.Close();
-                    openAccount.showDialog();
+                    openAccount.ShowDialog();
                     break;
             }
 
+        }
     }
 }

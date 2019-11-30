@@ -22,8 +22,24 @@ namespace bank_management_system
         public Login()
         {
             InitializeComponent();
+            this.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            userName.Text = string.Empty;
         }
 
-       
+        private void BtnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            switch (btn.Content.ToString())
+            {
+                case "登录":
+                    
+                    break;
+                case "开户":
+                    OpenAccount openAccount = new OpenAccount();
+                    this.Close();
+                    openAccount.ShowDialog();
+                    break;
+            }
+        }
     }
 }

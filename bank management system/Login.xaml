@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Login" Height="360" Width="480">
     <Grid Margin="10,0,0.333,-0.333">
-        <Label Content="用户名" HorizontalAlignment="Left" Height="40" Margin="13,141,0,0" VerticalAlignment="Top" Width="55"/>
+        <Label Content="账号" HorizontalAlignment="Left" Height="40" Margin="13,141,0,0" VerticalAlignment="Top" Width="55"/>
         <Label Content="密码" HorizontalAlignment="Left" Height="40" Margin="17,181,0,0" VerticalAlignment="Top" Width="55"/>
         <Button x:Name="BtnLogin" Content="登录" HorizontalAlignment="Left" Height="40" Margin="81,267,0,0" VerticalAlignment="Top" Width="111"/>
         <CheckBox x:Name="ClickBoxRememberPasswd" Content="记住密码" HorizontalAlignment="Left" Height="23" Margin="81,232,0,0" VerticalAlignment="Top" Width="111"/>

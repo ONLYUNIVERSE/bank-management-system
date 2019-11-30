@@ -24,7 +24,15 @@ namespace bank_management_system
             InitializeComponent();
             using (var context = new BankEntities())
             {
-                //var q =form
+                AccountTable accountTable = new AccountTable()
+                {
+                    Name = NameTextBox.Text,
+                    Sex=SexTextBox.Text,
+                    IDNumber=IDNumberTextBox.Text,
+                    PhoneNumber=PhoneNumberTextBox.Text,
+                    BankCardNumber=BankCardNumberTextBox.Text,
+                    Password=PasswdTextBox.Text
+                };
             }
         }
 

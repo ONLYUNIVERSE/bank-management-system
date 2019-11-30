@@ -31,14 +31,15 @@ namespace bank_management_system
             Login login = new Login();
             login.ShowDialog();
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        private  void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
-
         private void BtnOpenAccount_Click(object sender, RoutedEventArgs e)
         {
-
+            OpenAccount openaccount = new OpenAccount();
+            openaccount.Show();
         }
     }
 }

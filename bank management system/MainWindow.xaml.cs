@@ -23,8 +23,14 @@ namespace bank_management_system
         public MainWindow()//1.0.1  
         {
             InitializeComponent();
+            this.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            this.SourceInitialized += MainWindow_SourceInitialized;
         }
-
+        void MainWindow_SourceInitialized(object sender,System.EventArgs e)
+        {
+            Login login = new Login();
+            login.ShowDialog();
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 

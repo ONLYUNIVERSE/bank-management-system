@@ -26,8 +26,16 @@ namespace bank_management_system
 
         private void OpenAccount_Click(object sender, RoutedEventArgs e)
         {
-            OpenAccount openaccount = new OpenAccount();
-            openaccount.Show();
-        }
+            Button btn = sender as Button;
+            switch (btn.Content.Tostring())
+            {
+                case "登录":
+                    break;
+                case "开户":
+                    OpenAccount openAccount = new OpenAccount();
+                    this.close();
+                    openAccount.showDi
+            }
+
     }
 }

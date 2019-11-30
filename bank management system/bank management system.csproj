@@ -165,13 +165,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BankSql.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="BankSql_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>BankSql.mdf</DependentUpon>
-    </Content>
     <Resource Include="images\bar1.gif" />
     <Resource Include="images\bg1.gif" />
     <Resource Include="images\btn1.png" />

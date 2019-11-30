@@ -22,6 +22,11 @@ namespace bank_management_system
         public OpenAccount()
         {
             InitializeComponent();
+            using (var context = new BankEntities())
+            {
+                //var q =form
+            }
         }
+
     }
 }

@@ -5,86 +5,118 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="BankModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="AccountTable">
+        <EntityType Name="AccountInfo">
           <Key>
-            <PropertyRef Name="IDNumber" />
+            <PropertyRef Name="accountNo" />
           </Key>
-          <Property Name="UserName" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="Name" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="accountNo" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="IdCard" Type="char" MaxLength="18" Nullable="false" />
+          <Property Name="accountName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="accountPass" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="aaccountType" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeInfo">
+          <Key>
+            <PropertyRef Name="EmployeeNo" />
+          </Key>
+          <Property Name="EmployeeNo" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Sex" Type="nvarchar" MaxLength="1" Nullable="false" />
-          <Property Name="PhoneNumber" Type="nchar" MaxLength="11" Nullable="false" />
-          <Property Name="IDNumber" Type="char" MaxLength="18" Nullable="false" />
-          <Property Name="BankCardNumber" Type="char" MaxLength="20" Nullable="false" />
-          <Property Name="Operator" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="Money" Type="float" Nullable="false" />
-          <Property Name="DepositType" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="WorkDate" Type="datetime" Nullable="false" />
+          <Property Name="TelePhone" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="IdCard" Type="char" MaxLength="18" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
-        <EntityType Name="AdministratorTable">
+        <EntityType Name="LoginInfo">
           <Key>
-            <PropertyRef Name="AdminID" />
+            <PropertyRef Name="Bno" />
           </Key>
-          <Property Name="AdiminName" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="AdminPasswd" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="AdminPhoneNumber" Type="char" MaxLength="11" Nullable="false" />
-          <Property Name="AdminSex" Type="nvarchar" MaxLength="1" Nullable="false" />
-          <Property Name="AdminID" Type="char" MaxLength="20" Nullable="false" />
-          <Property Name="AdminSalary" Type="float" Nullable="false" />
+          <Property Name="Bno" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Password" Type="nchar" MaxLength="20" Nullable="false" />
         </EntityType>
-        <EntityType Name="RateTable">
+        <EntityType Name="MoneyInfo">
           <Key>
-            <PropertyRef Name="Time" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Time" Type="int" Nullable="false" />
-          <Property Name="Rate" Type="float" Nullable="false" />
+          <Property Name="Id" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="AccountNo" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="DealDate" Type="datetime" Nullable="false" />
+          <Property Name="DealType" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="DealMoney" Type="float" Nullable="false" />
+          <Property Name="Balance" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RateInfo">
+          <Key>
+            <PropertyRef Name="RationType" />
+          </Key>
+          <Property Name="RationType" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="RationValue" Type="float" Nullable="false" />
         </EntityType>
         <EntityContainer Name="BankModelStoreContainer">
-          <EntitySet Name="AccountTable" EntityType="Self.AccountTable" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AdministratorTable" EntityType="Self.AdministratorTable" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="RateTable" EntityType="Self.RateTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccountInfo" EntityType="Self.AccountInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeInfo" EntityType="Self.EmployeeInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoginInfo" EntityType="Self.LoginInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MoneyInfo" EntityType="Self.MoneyInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RateInfo" EntityType="Self.RateInfo" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BankModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="AccountTable">
+        <EntityType Name="AccountInfo">
           <Key>
-            <PropertyRef Name="IDNumber" />
+            <PropertyRef Name="accountNo" />
           </Key>
-          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="accountNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="IdCard" Type="String" MaxLength="18" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="accountName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="accountPass" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="aaccountType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeInfo">
+          <Key>
+            <PropertyRef Name="EmployeeNo" />
+          </Key>
+          <Property Name="EmployeeNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Sex" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="IDNumber" Type="String" MaxLength="18" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="BankCardNumber" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Operator" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Money" Type="Double" Nullable="false" />
-          <Property Name="DepositType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="WorkDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TelePhone" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="IdCard" Type="String" MaxLength="18" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityType Name="AdministratorTable">
+        <EntityType Name="LoginInfo">
           <Key>
-            <PropertyRef Name="AdminID" />
+            <PropertyRef Name="Bno" />
           </Key>
-          <Property Name="AdiminName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="AdminPasswd" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="AdminPhoneNumber" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="AdminSex" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="AdminID" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="AdminSalary" Type="Double" Nullable="false" />
+          <Property Name="Bno" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityType Name="RateTable">
+        <EntityType Name="MoneyInfo">
           <Key>
-            <PropertyRef Name="Time" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Time" Type="Int32" Nullable="false" />
-          <Property Name="Rate" Type="Double" Nullable="false" />
+          <Property Name="Id" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="AccountNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DealDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DealType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DealMoney" Type="Double" Nullable="false" />
+          <Property Name="Balance" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RateInfo">
+          <Key>
+            <PropertyRef Name="RationType" />
+          </Key>
+          <Property Name="RationType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RationValue" Type="Double" Nullable="false" />
         </EntityType>
         <EntityContainer Name="BankEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="AccountTable" EntityType="Self.AccountTable" />
-          <EntitySet Name="AdministratorTable" EntityType="Self.AdministratorTable" />
-          <EntitySet Name="RateTable" EntityType="Self.RateTable" />
+          <EntitySet Name="AccountInfo" EntityType="Self.AccountInfo" />
+          <EntitySet Name="EmployeeInfo" EntityType="Self.EmployeeInfo" />
+          <EntitySet Name="LoginInfo" EntityType="Self.LoginInfo" />
+          <EntitySet Name="MoneyInfo" EntityType="Self.MoneyInfo" />
+          <EntitySet Name="RateInfo" EntityType="Self.RateInfo" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -92,39 +124,55 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="BankModelStoreContainer" CdmEntityContainer="BankEntities">
-          <EntitySetMapping Name="AccountTable">
-            <EntityTypeMapping TypeName="BankModel.AccountTable">
-              <MappingFragment StoreEntitySet="AccountTable">
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
+          <EntitySetMapping Name="AccountInfo">
+            <EntityTypeMapping TypeName="BankModel.AccountInfo">
+              <MappingFragment StoreEntitySet="AccountInfo">
+                <ScalarProperty Name="accountNo" ColumnName="accountNo" />
+                <ScalarProperty Name="IdCard" ColumnName="IdCard" />
+                <ScalarProperty Name="accountName" ColumnName="accountName" />
+                <ScalarProperty Name="accountPass" ColumnName="accountPass" />
+                <ScalarProperty Name="aaccountType" ColumnName="aaccountType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeInfo">
+            <EntityTypeMapping TypeName="BankModel.EmployeeInfo">
+              <MappingFragment StoreEntitySet="EmployeeInfo">
+                <ScalarProperty Name="EmployeeNo" ColumnName="EmployeeNo" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
                 <ScalarProperty Name="Sex" ColumnName="Sex" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
-                <ScalarProperty Name="BankCardNumber" ColumnName="BankCardNumber" />
-                <ScalarProperty Name="Operator" ColumnName="Operator" />
-                <ScalarProperty Name="Money" ColumnName="Money" />
-                <ScalarProperty Name="DepositType" ColumnName="DepositType" />
+                <ScalarProperty Name="WorkDate" ColumnName="WorkDate" />
+                <ScalarProperty Name="TelePhone" ColumnName="TelePhone" />
+                <ScalarProperty Name="IdCard" ColumnName="IdCard" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="AdministratorTable">
-            <EntityTypeMapping TypeName="BankModel.AdministratorTable">
-              <MappingFragment StoreEntitySet="AdministratorTable">
-                <ScalarProperty Name="AdiminName" ColumnName="AdiminName" />
-                <ScalarProperty Name="AdminPasswd" ColumnName="AdminPasswd" />
-                <ScalarProperty Name="AdminPhoneNumber" ColumnName="AdminPhoneNumber" />
-                <ScalarProperty Name="AdminSex" ColumnName="AdminSex" />
-                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
-                <ScalarProperty Name="AdminSalary" ColumnName="AdminSalary" />
+          <EntitySetMapping Name="LoginInfo">
+            <EntityTypeMapping TypeName="BankModel.LoginInfo">
+              <MappingFragment StoreEntitySet="LoginInfo">
+                <ScalarProperty Name="Bno" ColumnName="Bno" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="RateTable">
-            <EntityTypeMapping TypeName="BankModel.RateTable">
-              <MappingFragment StoreEntitySet="RateTable">
-                <ScalarProperty Name="Time" ColumnName="Time" />
-                <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <EntitySetMapping Name="MoneyInfo">
+            <EntityTypeMapping TypeName="BankModel.MoneyInfo">
+              <MappingFragment StoreEntitySet="MoneyInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+                <ScalarProperty Name="DealDate" ColumnName="DealDate" />
+                <ScalarProperty Name="DealType" ColumnName="DealType" />
+                <ScalarProperty Name="DealMoney" ColumnName="DealMoney" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RateInfo">
+            <EntityTypeMapping TypeName="BankModel.RateInfo">
+              <MappingFragment StoreEntitySet="RateInfo">
+                <ScalarProperty Name="RationType" ColumnName="RationType" />
+                <ScalarProperty Name="RationValue" ColumnName="RationValue" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

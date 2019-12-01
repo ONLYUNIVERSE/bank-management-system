@@ -12,17 +12,13 @@ namespace bank_management_system
     using System;
     using System.Collections.Generic;
     
-    public partial class AccountTable
+    public partial class MoneyInfo
     {
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public string Name { get; set; }
-        public string Sex { get; set; }
-        public string PhoneNumber { get; set; }
-        public string IDNumber { get; set; }
-        public string BankCardNumber { get; set; }
-        public string Operator { get; set; }
-        public double Money { get; set; }
-        public string DepositType { get; set; }
+        public string Id { get; set; }
+        public string AccountNo { get; set; }
+        public System.DateTime DealDate { get; set; }
+        public string DealType { get; set; }
+        public double DealMoney { get; set; }
+        public double Balance { get; set; }
     }
 }

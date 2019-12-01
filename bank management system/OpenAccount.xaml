@@ -8,20 +8,19 @@
         Title="OpenAccount" Height="450" Width="500">
     <Grid>
         <Label Content="姓名" HorizontalAlignment="Left" Height="40" Margin="61,72,0,0" VerticalAlignment="Top" Width="96"/>
-        <Label Content="性别" HorizontalAlignment="Left" Height="40" Margin="61,112,0,0" VerticalAlignment="Top" Width="96"/>
         <Label Content="身份证号" HorizontalAlignment="Left" Height="40" Margin="61,152,0,0" VerticalAlignment="Top" Width="96"/>
-        <Label Content="手机号码" HorizontalAlignment="Left" Height="40" Margin="61,192,0,0" VerticalAlignment="Top" Width="96"/>
         <Label Content="银行卡号" HorizontalAlignment="Left" Height="40" Margin="61,232,0,0" VerticalAlignment="Top" Width="96"/>
         <Label Content="密码" HorizontalAlignment="Left" Height="40" Margin="61,272,0,0" VerticalAlignment="Top" Width="96"/>
         <Label Content="确认密码" HorizontalAlignment="Left" Height="40" Margin="61,312,0,0" VerticalAlignment="Top" Width="96"/>
         <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Height="30" Margin="126,72,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
-        <TextBox x:Name="SexTextBox" HorizontalAlignment="Left" Height="30" Margin="126,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
         <TextBox x:Name="IDNumberTextBox" HorizontalAlignment="Left" Height="30" Margin="126,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
-        <TextBox x:Name="PhoneNumberTextBox" HorizontalAlignment="Left" Height="30" Margin="126,192,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
         <TextBox x:Name="BankCardNumberTextBox" HorizontalAlignment="Left" Height="30" Margin="126,232,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
         <TextBox x:Name="PasswdTextBox" HorizontalAlignment="Left" Height="30" Margin="126,272,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
         <TextBox x:Name="PasswdAgainTextBox" HorizontalAlignment="Left" Height="30" Margin="126,312,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
         <Button x:Name="ConfirmButton" Content="确认开户" HorizontalAlignment="Left" Height="36" Margin="126,357,0,0" VerticalAlignment="Top" Width="120" Click="ConfirmButton_Click"/>
         <Button x:Name="CancleOpenAccount" Content="取消开户" HorizontalAlignment="Left" Height="36" Margin="306,357,0,0" VerticalAlignment="Top" Width="120" Click="CancleOpenAccount_Click"/>
+        <Label Content="存款类型" HorizontalAlignment="Left" Height="40" Margin="61,194,0,0" VerticalAlignment="Top" Width="96"/>
+        <ComboBox x:Name="ComboBoxType" HorizontalAlignment="Left" Height="35" Margin="162,191,0,0" VerticalAlignment="Top" Width="84"/>
+        <ComboBox x:Name="ComboBoxTime" HorizontalAlignment="Left" Height="35" Margin="270,191,0,0" VerticalAlignment="Top" Width="84"/>
     </Grid>
 </Window>

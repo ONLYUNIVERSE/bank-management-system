@@ -25,8 +25,10 @@ namespace bank_management_system
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<AccountTable> AccountTable { get; set; }
-        public virtual DbSet<AdministratorTable> AdministratorTable { get; set; }
-        public virtual DbSet<RateTable> RateTable { get; set; }
+        public virtual DbSet<AccountInfo> AccountInfo { get; set; }
+        public virtual DbSet<EmployeeInfo> EmployeeInfo { get; set; }
+        public virtual DbSet<LoginInfo> LoginInfo { get; set; }
+        public virtual DbSet<MoneyInfo> MoneyInfo { get; set; }
+        public virtual DbSet<RateInfo> RateInfo { get; set; }
     }
 }

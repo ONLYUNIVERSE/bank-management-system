@@ -19,21 +19,36 @@ namespace bank_management_system
     /// </summary>
     public partial class OpenAccount : Window
     {
-        
-        public OpenAccount()
-        {   
-            InitializeComponent();
-            this.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;   
-        }
 
+        public OpenAccount()
+        {
+            InitializeComponent();
+            this.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            ComboBoxType.Items.Add("仅开户");
+            ComboBoxType.Items.Add("活期存款");
+            ComboBoxType.Items.Add("定期存款");
+            ComboBoxType.SelectedIndex = ComboBoxType.Items.IndexOf("仅开户");
+            if(ComboBoxType.SelectedItem.ToString()=="定期存款")
+            {
+                ComboBoxTime.Items.Add("1年");
+                ComboBoxTime.Items.Add("3年");
+                ComboBoxTime.Items.Add("5年");
+            }
+            else
+            {
+                
+            }
+        }
+        
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
             bool failure = true;   //开户成功与否
-            while(failure)
+            while (failure)
             {
-                if (SexTextBox.Text.ToString() == "男" || SexTextBox.Text.ToString() == "女")
+
+                if (IDNumberTextBox.Text.ToString().Length == 18)
                 {
-                    if (IDNumberTextBox.Text.ToString().Length == 18)
+                    if (!(ComboBoxType.SelectedItem.ToString() == "定期存款" && ComboBoxTime.SelectedItem.ToString()== ""))
                     {
                         if (BankCardNumberTextBox.Text.ToString().Length > 15 && BankCardNumberTextBox.Text.ToString().Length < 20)
                         {
@@ -41,14 +56,12 @@ namespace bank_management_system
                             {
                                 using (var context = new BankEntities())
                                 {
-                                    AccountTable accountTable = new AccountTable()
+                                    AccountInfo accountInfo = new AccountInfo()
                                     {
-                                        Name = NameTextBox.Text.ToString(),
-                                        Sex = SexTextBox.Text.ToString(),
-                                        IDNumber = IDNumberTextBox.Text.ToString(),
-                                        PhoneNumber = PhoneNumberTextBox.Text.ToString(),
-                                        BankCardNumber = BankCardNumberTextBox.Text.ToString(),
-                                        Password = PasswdTextBox.Text.ToString()
+                                        accountName = NameTextBox.Text.ToString(),
+                                        IdCard = IDNumberTextBox.Text.ToString(),
+                                        accountNo = BankCardNumberTextBox.Text.ToString(),
+                                        accountPass = PasswdTextBox.Text.ToString()
                                     };
                                 }
                             }
@@ -69,17 +82,17 @@ namespace bank_management_system
                     }
                     else
                     {
-                        MessageBox.Show("无效的身份证号！");
-                        IDNumberTextBox.Text = "";
-                        IDNumberTextBox.Focus();
+                        MessageBox.Show("请选择存款期限！");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("请输入“男”或“女”");
-                    SexTextBox.Text = "";
-                    SexTextBox.Focus();
+                    MessageBox.Show("无效的身份证号！");
+                    IDNumberTextBox.Text = "";
+                    IDNumberTextBox.Focus();
                 }
+
+
                 failure = false;
             }
             Login login = new Login();

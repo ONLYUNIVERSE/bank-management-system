@@ -12,9 +12,9 @@ namespace bank_management_system
     using System;
     using System.Collections.Generic;
     
-    public partial class RateTable
+    public partial class RateInfo
     {
-        public int Time { get; set; }
-        public double Rate { get; set; }
+        public string RationType { get; set; }
+        public double RationValue { get; set; }
     }
 }
